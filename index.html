@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="card">
+            <h2>Random</h2>
+            <input type="text" id="random">
+            <button onclick=""> ACAK </button>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+    }
+
+    .dashboard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        padding: 20px;
+        max-width: 50%;
+        border-radius: 20px;
+        max-height: 50%;
+        background-color: aquamarine;
+    }
+</style>
+<script>
+    function generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.querySelector('button').onclick = function() {
+        var min = 100000000;
+        var max = 999999999;
+        var randomNumber = generateRandomNumber(min, max);
+        var randomString = String.fromCharCode(65 + Math.floor(Math.random() * 26)) + String.fromCharCode(65 + Math.floor(Math.random() * 26));
+        document.getElementById('random').value = randomNumber + randomString;
+    }
+</script>
